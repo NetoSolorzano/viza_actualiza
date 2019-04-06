@@ -48,6 +48,11 @@ namespace viza_actualiza
                     MySqlCommand micon = new MySqlCommand(concabeza, conn);
                     MySqlDataAdapter da = new MySqlDataAdapter(micon);
                     da.Fill(dtc);
+                    //
+                    micon = new MySqlCommand(condetalle, conn);
+                    da = new MySqlDataAdapter(micon);
+                    da.Fill(dtd);
+                    //
 
                 }
                 else
