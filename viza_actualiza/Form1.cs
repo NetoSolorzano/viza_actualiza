@@ -31,6 +31,10 @@ namespace viza_actualiza
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // nothing to do
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -53,7 +57,17 @@ namespace viza_actualiza
                     da = new MySqlDataAdapter(micon);
                     da.Fill(dtd);
                     //
-
+                    if(pasa_cabeza(dtc) == false)
+                    {
+                        MessageBox.Show("NO se inserto los datos de cabecera");
+                    }
+                    else
+                    {
+                        if(pasa_detalle(dtd) == false)
+                        {
+                            MessageBox.Show("NO se inserto los datos del detalle");
+                        }
+                    }
                 }
                 else
                 {
@@ -61,10 +75,17 @@ namespace viza_actualiza
                 }
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private bool pasa_cabeza(DataTable dtc)     // inserta los datos de cabecera
         {
+            bool retorna = false;
 
+            return retorna;
+        }
+        private bool pasa_detalle(DataTable dtd)    // inserta datos del detalle
+        {
+            bool retorna = false;
+
+            return retorna;
         }
     }
 }
